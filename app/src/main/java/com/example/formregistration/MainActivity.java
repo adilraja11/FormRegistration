@@ -79,10 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         intent.putExtra("nama", etNama.getText().toString());
         intent.putExtra("location", etTempat.getText().toString());
-        intent.putExtra("birthdate", etDate.getText()).toString();
+        intent.putExtra("birthdate", etDate.getText().toString());
 
         System.out.println(etDate.getText().toString());
-
 
         startActivity(intent);
     }
