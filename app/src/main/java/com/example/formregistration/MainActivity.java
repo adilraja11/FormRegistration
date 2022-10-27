@@ -58,35 +58,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void showDateDialog() {
         Calendar newCalendar = Calendar.getInstance();
-        /**
-         * Initiate DatePicker dialog
-         */
         datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-                /**
-                 * Method ini dipanggil saat kita selesai memilih tanggal di DatePicker
-                 */
-
-                /**
-                 * Set Calendar untuk menampung tanggal yang dipilih
-                 */
                 Calendar newDate = Calendar.getInstance();
                 newDate.set(year, monthOfYear, dayOfMonth);
 
-                /**
-                 * Update TextView dengan tanggal yang kita pilih
-                 */
                 etDate.setText(dateFormatter.format(newDate.getTime()));
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
-        /**
-         * Tampilkan DatePicker dialog
-         */
         datePickerDialog.show();
     }
 
