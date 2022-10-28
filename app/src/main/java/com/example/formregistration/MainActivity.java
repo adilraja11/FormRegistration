@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        getSupportActionBar().setTitle("Kelompok 10 PBP Kelas A");
 
     }
 
