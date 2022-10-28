@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String inputDate = etDate.getText().toString().trim();
 
         boolean isEmptyFields = false;
+
         if (inputName.isEmpty()) {
             isEmptyFields = true;
             etNama.setError("Field ini tidak boleh kosong");
@@ -91,13 +92,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             etDate.setError("Field ini tidak boleh kosong");
         }
 
-        Intent intent = new Intent(this, ResultActivity.class);
+        if (!isEmptyFields) {
+            Intent intent = new Intent(this, ResultActivity.class);
 
-        intent.putExtra("nama", etNama.getText().toString());
-        intent.putExtra("location", etTempat.getText().toString());
-        intent.putExtra("birthdate", etDate.getText().toString());
+            intent.putExtra("nama", etNama.getText().toString());
+            intent.putExtra("location", etTempat.getText().toString());
+            intent.putExtra("birthdate", etDate.getText().toString());
 
-        startActivity(intent);
+            startActivity(intent);
+        }
     }
 
 }
