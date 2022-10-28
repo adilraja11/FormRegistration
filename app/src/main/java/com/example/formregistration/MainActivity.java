@@ -73,6 +73,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        String inputName = etNama.getText().toString().trim();
+        String inputLocation = etTempat.getText().toString().trim();
+        String inputDate = etDate.getText().toString().trim();
+
+        boolean isEmptyFields = false;
+        if (inputName.isEmpty()) {
+            isEmptyFields = true;
+            etNama.setError("Field ini tidak boleh kosong");
+        }
+        if (inputLocation.isEmpty()) {
+            isEmptyFields = true;
+            etTempat.setError("Field ini tidak boleh kosong");
+        }
+        if (inputDate.isEmpty()) {
+            isEmptyFields = true;
+            etDate.setError("Field ini tidak boleh kosong");
+        }
+
         Intent intent = new Intent(this, ResultActivity.class);
 
         intent.putExtra("nama", etNama.getText().toString());
