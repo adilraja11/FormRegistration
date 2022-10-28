@@ -6,6 +6,8 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton btnDate;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
-    private Button btDatePicker;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         getSupportActionBar().setTitle("Kelompok 10 PBP Kelas A");
-
     }
 
     private void showDateDialog() {
@@ -81,8 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("nama", etNama.getText().toString());
         intent.putExtra("location", etTempat.getText().toString());
         intent.putExtra("birthdate", etDate.getText().toString());
-
-        System.out.println(etDate.getText().toString());
 
         startActivity(intent);
     }
